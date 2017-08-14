@@ -1,0 +1,3 @@
+:schedule:
+  ProductUpdater:
+    cron: '00 0 * * *'
