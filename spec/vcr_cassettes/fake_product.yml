@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=AKIAJLF4KCDNSCNVJ25A&AssociateTag=jscc0a-20&ItemId=fake_product&Operation=ItemLookup&ResponseGroup=Small,%20Reviews&Service=AWSECommerceService&Signature=6xs36fIQBaoPNEZv9PTJ0Fle1OT2TotLd/QEOjiDajw=&Timestamp=2017-08-15T02:20:18Z&Version=2013-08-01
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - webservices.amazon.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 15 Aug 2017 02:20:18 GMT
+      Server:
+      - Apache-Coyote/1.1
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Vary:
+      - Accept-Encoding,User-Agent
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: <?xml version="1.0" ?><ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2013-08-01"><OperationRequest><HTTPHeaders><Header
+        Name="UserAgent" Value="Ruby"></Header></HTTPHeaders><RequestId>06f44e45-7667-477d-8734-dfc3a0161ec7</RequestId><Arguments><Argument
+        Name="AWSAccessKeyId" Value="AKIAJLF4KCDNSCNVJ25A"></Argument><Argument Name="AssociateTag"
+        Value="jscc0a-20"></Argument><Argument Name="ItemId" Value="fake_product"></Argument><Argument
+        Name="Operation" Value="ItemLookup"></Argument><Argument Name="ResponseGroup"
+        Value="Small, Reviews"></Argument><Argument Name="Service" Value="AWSECommerceService"></Argument><Argument
+        Name="Timestamp" Value="2017-08-15T02:20:18Z"></Argument><Argument Name="Version"
+        Value="2013-08-01"></Argument><Argument Name="Signature" Value="6xs36fIQBaoPNEZv9PTJ0Fle1OT2TotLd/QEOjiDajw="></Argument></Arguments><RequestProcessingTime>0.0024929470000000</RequestProcessingTime></OperationRequest><Items><Request><IsValid>True</IsValid><ItemLookupRequest><IdType>ASIN</IdType><ItemId>FAKE_PRODUCT</ItemId><ResponseGroup>Small</ResponseGroup><ResponseGroup>Reviews</ResponseGroup><VariationPage>All</VariationPage></ItemLookupRequest><Errors><Error><Code>AWS.InvalidParameterValue</Code><Message>FAKE_PRODUCT
+        is not a valid value for ItemId. Please change this value and retry your request.</Message></Error></Errors></Request></Items></ItemLookupResponse>
+    http_version: 
+  recorded_at: Tue, 15 Aug 2017 02:20:18 GMT
+recorded_with: VCR 3.0.3
