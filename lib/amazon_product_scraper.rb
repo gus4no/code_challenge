@@ -35,7 +35,7 @@ class AmazonProductScraper
       review_rating_node = review.css('div > span > img')
       {
         text: review.css('.reviewText').text,
-        reviewer: review.css('div:nth-child(3) a:first-child').text,
+        reviewer: review.at('div:contains("By") a > span').text,
         rating: {
           text: review_rating_node.attribute('alt').text,
           img: review_rating_node.attribute('src').text,
