@@ -5,7 +5,7 @@ class AmazonProductImporter
     item = response.get_element("Item")
     reviews_url = item.get_element('CustomerReviews').get_unescaped('IFrameURL')
     product_name = item.get_element('ItemAttributes').get('Title')
-    scraper = ::AmazonProductScraper.new(reviews_url, { name: product_name })
+    scraper = ::AmazonProductScraper.new(reviews_url, { id: asin, name: product_name })
     begin
       product = Product.find(asin)
       product.update_attributes(scraper.product_attributes)
