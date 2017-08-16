@@ -43,6 +43,7 @@ GEM
     amazon-ecs (2.5.0)
       nokogiri (~> 1.4)
       ruby-hmac (~> 0.3)
+    ansi (1.5.0)
     arel (8.0.0)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -74,6 +75,10 @@ GEM
       elasticsearch-transport (= 5.0.4)
     elasticsearch-api (5.0.4)
       multi_json
+    elasticsearch-extensions (0.0.26)
+      ansi
+      elasticsearch
+      ruby-prof
     elasticsearch-model (5.0.1)
       activesupport (> 3)
       elasticsearch (~> 5)
@@ -185,6 +190,7 @@ GEM
       rspec-support (~> 3.6.0)
     rspec-support (3.6.0)
     ruby-hmac (0.4.0)
+    ruby-prof (0.16.2)
     ruby_dep (1.5.0)
     rufus-scheduler (3.4.2)
       et-orbi (~> 1.0)
@@ -264,6 +270,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   dotenv
+  elasticsearch-extensions
   elasticsearch-model
   elasticsearch-persistence
   elasticsearch-rails
