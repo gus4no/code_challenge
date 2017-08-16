@@ -40,9 +40,10 @@ export default class AmazonProductLookup extends React.Component {
 
     return (
       <div className="container amazon-product-lookup">
+        <h2> Amazon Product Lookup </h2>
         <div className="form-inline search-form">
           <div className="form-group">
-            <input className="form-control" onChange={this.handleChange.bind(this)} />
+            <input placeholder="ASIN" className="form-control" onChange={this.handleChange.bind(this)} />
           </div>
           <div className="form-group">
             <input className="btn btn-primary" type="button" value="Find product" onClick={this.getProduct.bind(this)} />
