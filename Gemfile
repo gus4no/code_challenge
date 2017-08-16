@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'amazon-ecs'
+gem 'bonsai-elasticsearch-rails'
 gem 'coffee-rails', '~> 4.2'
 gem 'elasticsearch-model'
 gem 'elasticsearch-persistence', require: 'elasticsearch/persistence/model'

@@ -1,3 +1,5 @@
 if Rails.env.production?
-  Elasticsearch::Model.client = Elasticsearch::Client.new({url: ENV['BONSAI_URL'], logs: true})
+  client =  Elasticsearch::Client.new({url: ENV['BONSAI_URL'], logs: true})
+  Elasticsearch::Model.client = client
+  Elasticsearch::Persistence.client = client
 end

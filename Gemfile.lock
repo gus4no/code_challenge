@@ -49,6 +49,7 @@ GEM
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
     bindex (0.5.0)
+    bonsai-elasticsearch-rails (0.0.4)
     builder (3.2.3)
     byebug (9.0.6)
     coderay (1.1.1)
@@ -261,6 +262,7 @@ PLATFORMS
 
 DEPENDENCIES
   amazon-ecs
+  bonsai-elasticsearch-rails
   byebug
   coffee-rails (~> 4.2)
   dotenv
