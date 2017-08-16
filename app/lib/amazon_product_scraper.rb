@@ -37,7 +37,7 @@ class AmazonProductScraper
     reviews.map do |review|
       review_rating_node = review.css('div > span > img')
       {
-        text: review.css('.reviewText').text,
+        text: extract_review_text(review),
         reviewer: review.at('div:contains("By") a > span').text,
         rating: {
           text: review_rating_node.attribute('alt').text,
@@ -45,5 +45,9 @@ class AmazonProductScraper
         }
       }
     end
+  end
+
+  def extract_review_text(review)
+    review.css('.reviewText').text.presence || review.xpath("text()").text
   end
 end
