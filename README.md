@@ -1,24 +1,25 @@
-# README
+# Amazon Product Lookup
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Amazon product lookup is a simple app to get amazon product's rating and reviews.
 
-Things you may want to cover:
+#Development
 
-* Ruby version
+This app uses Rails 5.1 and Webpack.
 
-* System dependencies
+Make sure you have the following tools installed.
 
-* Configuration
+- yarn: `brew install yarn`
+- elasticsearch: `brew install elasticsearch`
 
-* Database creation
+1.- Clone the repo and run `bundle install`
 
-* Database initialization
+2.- Run `foreman start -f Procfile.dev`
 
-* How to run the test suite
+3.- Run `./bin/webpack-dev-server` in project root.
 
-* Services (job queues, cache servers, search engines, etc.)
+4.- Go to `http://localhost:5000` and you're all set
 
-* Deployment instructions
 
-* ...
+#Test
+
+Simply run `bundle exec rspec spec/`, this would boot up an elasticsearch cluster in port `9250` to run tests against.
