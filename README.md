@@ -2,7 +2,7 @@
 
 Amazon product lookup is a simple app to get amazon product's rating and reviews.
 
-#Development
+# Development
 
 This app uses Rails 5.1 and Webpack.
 
@@ -20,6 +20,6 @@ Make sure you have the following tools installed.
 4.- Go to `http://localhost:5000` and you're all set
 
 
-#Test
+# Test
 
 Simply run `bundle exec rspec spec/`, this would boot up an elasticsearch cluster in port `9250` to run tests against.
