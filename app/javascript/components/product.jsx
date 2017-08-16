@@ -4,25 +4,37 @@ import PropTypes from 'prop-types';
 
 export default class Product extends React.Component {
   renderReviews(){
-    return this.props.product.reviews.map((review, index) =>
-      <div key={index}>
-        <img src={review.rating.img} />
-        <span>({review.rating.text})</span>
-        <p>By: <b>{review.reviewer}</b></p>
-        <p>{review.text}</p>
-      </div>
-    )
+    if(this.props.product.reviews.length) {
+      return this.props.product.reviews.map((review, index) =>
+        <div key={index}>
+          <img src={review.rating.img} />
+          <span>({review.rating.text})</span>
+          <p>By: <b>{review.reviewer}</b></p>
+          <p>{review.text}</p>
+        </div>
+      )
+    }else{
+      return(<span className="error-message">There are no reviews yet.</span>)
+    }
+  }
+
+  renderOverallRating(){
+    if(this.props.product.rating) {
+      return(
+        <div>
+          <img src={this.props.product.rating.img} />
+          <span>({this.props.product.rating.text}) / {this.props.product.total_reviews} Total reviews</span>
+        </div>
+      );
+    }
   }
 
   render(){
     return(
-      <div className="col-xs-12">
+      <div>
         <div className="product-details">
           <h2>{this.props.product.name}</h2>
-          <div>
-            <img src={this.props.product.rating.img} />
-            <span>({this.props.product.rating.text}) / {this.props.product.total_reviews} Total reviews</span>
-          </div>
+          {this.renderOverallRating()}
           <div className="product-reviews">
             <h4>Customer reviews</h4>
             {this.renderReviews()}

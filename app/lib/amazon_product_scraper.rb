@@ -21,11 +21,14 @@ class AmazonProductScraper
   end
 
   def total_reviews
+    reviews_node = html.css('.crIFrameHeaderHistogram > div > b')
+    return unless reviews_node.any?
     html.css('.crIFrameHeaderHistogram > div > b').text.split[0].gsub(',','').to_i
   end
 
   def build_rating_node
     rating = html.css('.asinReviewsSummary img')
+    return unless rating.any?
     { text: rating.attribute('alt').text, img: rating.attribute('src').text }
   end
 
