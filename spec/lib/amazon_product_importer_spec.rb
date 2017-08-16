@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe AmazonProductImporter do
+describe AmazonProductImporter, elasticsearch: true do
   describe 'self.import' do
     context 'when product already exists' do
       let(:product) { Product.create(id: 'B002QYW8LW') }
