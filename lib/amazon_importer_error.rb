@@ -1,2 +1,0 @@
-class AmazonImporterError < StandardError
-end
