@@ -48,7 +48,7 @@ export default class AmazonProductLookup extends React.Component {
             <input className="btn btn-primary" type="button" value="Find product" onClick={this.getProduct.bind(this)} />
           </div>
         </div>
-        <p className="error">
+        <p className="error-message">
           {this.state.error}
         </p>
         <div>
