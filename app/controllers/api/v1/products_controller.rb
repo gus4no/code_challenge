@@ -1,5 +1,5 @@
 class Api::V1::ProductsController < ApplicationController
-  rescue_from AmazonImporterError, with: :render_error_response
+  rescue_from(AmazonImporterError, OpenURI::HTTPError, with: :render_error_response)
 
   def import
     product = begin
